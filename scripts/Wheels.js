@@ -1,4 +1,4 @@
-import {getWheels} from './database.js'
+import {getWheels, setWheels} from './database.js'
 const wheelChoices = getWheels()
 
 //event listener that will select and option for wheel option 17 18 inch
@@ -8,7 +8,7 @@ document.addEventListener(
         if (changeEvent.target.id === "wheel") {
             const chosenOption = changeEvent.target.value
             console.log(chosenOption)  // "1", "2", "3", or "4"
-            window.alert(`User Chose Option: ${chosenOption}`)
+            setWheels(parseInt(changeEvent.target.value))
         }
         
     }

@@ -1,15 +1,15 @@
-import {getTechnology} from './database.js'
+import {getTechnology, setTechnology} from './database.js'
 const technologyChoices = getTechnology()
 
 
 //event listener that will select and option for tech package
 document.addEventListener(
     "change",
-    (changeEvent) => {
-        if (changeEvent.target.id === "tech") {
-            const chosenOption = changeEvent.target.value
+    (event) => {
+        if (event.target.id === "tech") {
+            const chosenOption = event.target.value
             console.log(chosenOption)  // "1", "2", "3", or "4"
-            window.alert(`User Chose Option: ${chosenOption}`)
+            setTechnology(parseInt(event.target.value))
         }
         
     }

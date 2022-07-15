@@ -1,36 +1,36 @@
 const database = {
     paintColor: [
-        {pk:1, color: "Silver" },
-        {pk:2, color: "Midnight Blue" },
-        {pk:3,color: "Firebrick Red"},
-        {pk:4,color: "Spring Green"}
+        {id:1, color: "Silver", price:1500 },
+        {id:2, color: "Midnight Blue",price:1200 },
+        {id:3,color: "Firebrick Red", price:2200},
+        {id:4,color: "Spring Green", price:1350}
     ],
     interior: [
-        {pk:1, fabric: "Beige Fabric"},
-        {pk:2, fabric:"Charcoal Fabric"},
-        {pk:3, fabric: "White Leather"},
-        {pk:4, fabric: "Black Leather"}
+        {id:1, fabric: "Beige Fabric",price:2000},
+        {id:2, fabric:"Charcoal Fabric", price:2200},
+        {id:3, fabric: "White Leather",price:3200},
+        {id:4, fabric: "Black Leather",price:3100}
     ],
     technology: [
-        {pk:1, package: "Basic Package (basic sound system)" },
-        {pk:2, package: "Navigation Package (includes integrated navigation controls)"},
-        {pk:3, package: "Visibility Package (includes side and reat cameras)"},
-        {pk:4, package: "Ultra Package (includes navigation and visibility packages)"}
+        {id:1, package: "Basic Package (basic sound system)",price:1800 },
+        {id:2, package: "Navigation Package (includes integrated navigation controls)",price:1700},
+        {id:3, package: "Visibility Package (includes side and reat cameras)",price:1200},
+        {id:4, package: "Ultra Package (includes navigation and visibility packages)",price:2400}
     ],
     wheels: [
-        {pk:1, name: "17-inch Pair Radial"},
-        {pk:2, name: "17-inch Pair Radial Black"},
-        {pk:3, name: "18-inch Pair Spoke Silver"},
-        {pk:4, name: "18-inch Pair Spoke Black"}
+        {id:1, name: "17-inch Pair Radial",price:120},
+        {id:2, name: "17-inch Pair Radial Black",price: 180},
+        {id:3, name: "18-inch Pair Spoke Silver",price: 200},
+        {id:4, name: "18-inch Pair Spoke Black",price:220}
     ],
-    // customOrders: [
-    //     {id: 1,
-    //      paintColorId:3 ,
-    //      interiorId:4 ,
-    //      technologyId:2 ,
-    //      wheelsId:1   
-    //     }
-    // ]
+    customOrders: [
+        {id: 1,
+         paintColorId:3 ,
+         interiorId:4 ,
+         technologyId:2 ,
+         wheelsId:1   
+        }
+    ],
     orderBuilder: [
         {
 
@@ -49,6 +49,9 @@ export const getTechnology = () => {
 }
 export const getWheels = () => {
     return database.wheels.map(wheel => ({...wheel}))
+}
+export const getOrders = () => {
+    return database.customOrders.map(order => ({...order}))
 }
 
 

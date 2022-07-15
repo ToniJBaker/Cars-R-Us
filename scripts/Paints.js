@@ -1,4 +1,4 @@
-import {getPaintColor, } from './database.js'
+import {getPaintColor, setPaint} from './database.js'
 const paints = getPaintColor()
 
 
@@ -7,12 +7,11 @@ const paints = getPaintColor()
 document.addEventListener(
     "change",
     (event) => {
-        const paints = getPaintColor()
-        
+              
         if (event.target.id === "paint") {
             const chosenOption = event.target.value
             console.log(chosenOption)  // "1", "2", "3", or "4"
-            window.alert(`User Chose Option: ${paint.color}`)
+            setPaint(parseInt(event.target.value))
         
         
     }
@@ -26,7 +25,7 @@ export const Paints = () => {
     `   
     const listItems = paints.map(paintColor => {
         return `        
-        <option value=${paintColor.id}>${paintColor.color}</option>   
+        <option value="${paintColor.id}">${paintColor.color}</option>   
     `
     })
     html += listItems.join("")

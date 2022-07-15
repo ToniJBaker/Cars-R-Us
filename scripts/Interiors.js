@@ -1,4 +1,4 @@
-import {getInterior, } from './database.js'
+import {getInterior, setInterior, } from './database.js'
 const interiorChoices = getInterior()
 //event listener that will select and option for interior fabric
 document.addEventListener(
@@ -7,7 +7,7 @@ document.addEventListener(
         if (changeEvent.target.id === "interior") {
             const chosenOption = changeEvent.target.value
             console.log(chosenOption)  // "1", "2", "3", or "4"
-            window.alert(`User Chose Option: ${chosenOption}`)
+            setInterior(parseInt(changeEvent.target.value))
         }
         
     }
